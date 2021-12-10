@@ -1,0 +1,9 @@
+name: conda-quality
+dependencies:
+  - python=3.8
+  - pip=20.1
+  - black
+  - isort
+  - pytest
+  - flake8
+  - mypy
