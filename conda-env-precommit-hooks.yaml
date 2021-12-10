@@ -1,0 +1,51 @@
+- id: isort
+    name: isort
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['isort']
+    entry: isort
+    types: [python]
+
+- id: black
+    name: black
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['black']
+    entry: black
+    types: [python]
+
+- id: flake8
+    name: flake8
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['flake8']
+    entry: flake8
+    types: [python]
+    exclude: setup.py
+
+- id: mypy
+    name: mypy
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['mypy']
+    entry: mypy
+    types: [python]
+    require_serial: true
+
+- id: pytest
+    name: pytest
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['pytest']
+    entry: pytest
+    types: [python]
+    pass_filenames: false
+
+- id: pytest-cov
+    name: pytest
+    stages: [push]
+    language: conda
+    additional_dependencies: ['pytest']
+    entry: pytest --cov --cov-fail-under=100
+    types: [python]
+    pass_filenames: false
