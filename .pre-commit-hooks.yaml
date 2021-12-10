@@ -1,4 +1,4 @@
-- id: isort
+-   id: isort
     name: isort
     stages: [commit]
     language: conda
@@ -6,7 +6,7 @@
     entry: isort
     types: [python]
 
-- id: black
+-   id: black
     name: black
     stages: [commit]
     language: conda
@@ -14,7 +14,7 @@
     entry: black
     types: [python]
 
-- id: flake8
+-   id: flake8
     name: flake8
     stages: [commit]
     language: conda
@@ -23,7 +23,7 @@
     types: [python]
     exclude: setup.py
 
-- id: mypy
+-   id: mypy
     name: mypy
     stages: [commit]
     language: conda
@@ -32,7 +32,7 @@
     types: [python]
     require_serial: true
 
-- id: pytest
+-   id: pytest
     name: pytest
     stages: [commit]
     language: conda
@@ -41,7 +41,7 @@
     types: [python]
     pass_filenames: false
 
-- id: pytest-cov
+-   id: pytest-cov
     name: pytest
     stages: [push]
     language: conda

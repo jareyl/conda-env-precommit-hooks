@@ -1,6 +1,6 @@
 repos:
   repo: https://github.com/jareyl/conda-env-precommit-hooks
-  rev: 1.0.1
+  rev: 1.0.4
   hooks:
   - id: isort
     additional_dependencies: ['isort']
