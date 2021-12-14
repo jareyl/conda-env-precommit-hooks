@@ -3,6 +3,7 @@
     stages: [commit]
     language: conda
     additional_dependencies: ['isort']
+    args: [ "--profile", "black",--line-length=120 ]
     entry: isort
     types: [python]
 
@@ -12,6 +13,7 @@
     language: conda
     additional_dependencies: ['black']
     entry: black
+    args: [ --line-length=120 ]
     types: [python]
 
 -   id: flake8
