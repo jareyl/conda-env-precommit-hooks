@@ -6,7 +6,7 @@
     entry: black
     args: [--line-length=120]
     types: [python]
-    always_run: false
+    always_run: true
 
   - id: isort
     name: isort
@@ -16,7 +16,7 @@
     entry: isort
     args: ["--profile", "black",--line-length=120]
     types: [python]
-    always_run: false
+    always_run: true
 
 -   id: flake8
     name: flake8
