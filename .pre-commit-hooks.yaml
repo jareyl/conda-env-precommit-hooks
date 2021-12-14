@@ -1,59 +1,51 @@
-- id: black
-    name: black
-    stages: [ commit ]
-    language: conda
-    additional_dependencies: [ 'black' ]
-    entry: black
-    args: [ --line-length=120 ]
-    types: [ python ]
-    always_run: false
-
-- id: isort
+-   id: isort
     name: isort
-    stages: [ commit ]
+    stages: [commit]
     language: conda
-    additional_dependencies: [ 'isort' ]
+    additional_dependencies: ['isort']
     entry: isort
-    args: [ "--profile", "black",--line-length=120 ]
-    types: [ python ]
-    always_run: false
+    types: [python]
 
-- id: flake8
+-   id: black
+    name: black
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['black']
+    entry: black
+    types: [python]
+
+-   id: flake8
     name: flake8
-    stages: [ commit ]
+    stages: [commit]
     language: conda
-    additional_dependencies: [ 'flake8' ]
+    additional_dependencies: ['flake8']
     entry: flake8
-    types: [ python ]
+    types: [python]
     exclude: setup.py
-    always_run: true
 
-- id: mypy
+-   id: mypy
     name: mypy
-    stages: [ commit ]
+    stages: [commit]
     language: conda
-    additional_dependencies: [ 'mypy' ]
-    entry: tools/types/mypy_wrapper.sh
-    types: [ python ]
+    additional_dependencies: ['mypy']
+    entry: mypy
+    types: [python]
     require_serial: true
-    always_run: true
 
-- id: pytest
+-   id: pytest
     name: pytest
-    stages: [ commit ]
+    stages: [commit]
     language: conda
-    additional_dependencies: [ 'pytest' ]
-    entry: tools/test/pytest_wrapper.sh
-    types: [ python ]
+    additional_dependencies: ['pytest']
+    entry: pytest
+    types: [python]
     pass_filenames: false
-    always_run: true
 
-- id: pytest-cov
+-   id: pytest-cov
     name: pytest
-    stages: [ push ]
+    stages: [push]
     language: conda
-    additional_dependencies: [ 'pytest' ]
-    entry: pytest --cov --cov-fail-under=35
-    types: [ python ]
+    additional_dependencies: ['pytest']
+    entry: pytest --cov --cov-fail-under=70
+    types: [python]
     pass_filenames: false
-    always_run: true
