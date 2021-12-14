@@ -1,18 +1,22 @@
--   id: isort
-    name: isort
-    stages: [commit]
-    language: conda
-    additional_dependencies: ['isort']
-    entry: isort
-    types: [python]
-
--   id: black
+  - id: black
     name: black
     stages: [commit]
     language: conda
     additional_dependencies: ['black']
     entry: black
+    args: [--line-length=120]
     types: [python]
+    always_run: false
+
+  - id: isort
+    name: isort
+    stages: [commit]
+    language: conda
+    additional_dependencies: ['isort']
+    entry: isort
+    args: ["--profile", "black",--line-length=120]
+    types: [python]
+    always_run: false
 
 -   id: flake8
     name: flake8
