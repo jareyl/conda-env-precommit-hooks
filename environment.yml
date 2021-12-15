@@ -9,3 +9,4 @@ dependencies:
   - pip=20.1
   - pip:
     - types-setuptools
+    - mypy
