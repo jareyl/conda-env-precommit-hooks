@@ -39,6 +39,12 @@ while [ $# -gt 1 ]; do
     shift
 done
 
+#!/bin/bash
+echo "Script executed from: ${PWD}"
+
+BASEDIR=$(dirname $0)
+echo "Script location: ${BASEDIR}"
+
 ROOT_PATH="/$(echo "$1" | cut -d "/" -f2)"
 echo $ROOT_PATH
 SETUP_PATH=$ROOT_PATH/setup

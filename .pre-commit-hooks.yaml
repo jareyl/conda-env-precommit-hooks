@@ -36,10 +36,13 @@
 
 -   id: pytest
     name: pytest
-    entry: pytest
-    language: system
+    stages: [commit]
+    language: script
+    entry: pytest-wrapper/pytest_wrapper.sh
+    types: [python]
     pass_filenames: false
     always_run: true
+    verbose: true
 
 -   id: pytest-cov
     name: pytest-cov
