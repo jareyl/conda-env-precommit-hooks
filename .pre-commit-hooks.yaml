@@ -34,7 +34,7 @@
     require_serial: true
     always_run: true
 
-  - id: pytest
+-   id: pytest
     name: pytest
     entry: pytest
     language: system
