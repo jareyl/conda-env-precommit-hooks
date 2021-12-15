@@ -57,3 +57,11 @@
     types: [python]
     pass_filenames: false
     always_run: true
+
+-   id: conventional-pre-commit
+    name: Conventional Commit
+    entry: conventional-commit/conventional-pre-commit.sh
+    language: script
+    description: Checks commit message for Conventional Commits formatting
+    always_run: true
+    stages: [commit-msg]
