@@ -6,7 +6,7 @@
     args: [ "--profile", "black",--line-length=120 ]
     entry: isort
     types: [python]
-    always_run: true
+    always_run: false
 
 -   id: black
     name: black
