@@ -41,8 +41,7 @@
 -   id: pytest
     name: pytest
     stages: [commit]
-    language: conda
-    additional_dependencies: ['pytest']
+    language: script
     entry: pytest_wrapper.sh
     types: [python]
     pass_filenames: false
