@@ -25,8 +25,19 @@ function check_pytest_status() {
 # End functions definition
 # -----------------------------------------------------------------------
 
-MY_PATH=$(dirname "$0")            # relative
-MY_PATH=$(dirname $(dirname $(cd "$MY_PATH" && pwd)))    # going up 2 dir levels
+#Paths management
+while [ $# -gt 1 ]; do
+    echo $1 >> "/home/jose/debug.txt"
+    shift
+done
+
+#!/bin/bash
+echo "Script executed from: ${PWD}"
+
+BASEDIR=$(dirname $0)
+echo "Script location: ${BASEDIR}"
+
+MY_PATH=${PWD}
 
 if [[ -z "$MY_PATH" ]] ; then
   # error; for some reason, the path is not accessible

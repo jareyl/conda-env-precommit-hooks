@@ -33,19 +33,15 @@ function check_pytest_status() {
 #  exit 1  # fail
 #fi
 
-#Paths management
-while [ $# -gt 1 ]; do
-    echo $1 >> "/home/jose/debug.txt"
-    shift
-done
+MY_PATH=${PWD}
 
-#!/bin/bash
-echo "Script executed from: ${PWD}"
+if [[ -z "$MY_PATH" ]] ; then
+  # error; for some reason, the path is not accessible
+  # to the script (e.g. permissions re-evaled after suid)
+  exit 1  # fail
+fi
 
-BASEDIR=$(dirname $0)
-echo "Script location: ${BASEDIR}"
-
-ROOT_PATH="/$(echo "$1" | cut -d "/" -f2)"
+ROOT_PATH=$MY_PATH
 echo $ROOT_PATH
 SETUP_PATH=$ROOT_PATH/setup
 SETUP_CONF_PATH=$SETUP_PATH/style_conf
