@@ -35,6 +35,7 @@ function check_pytest_status() {
 
 #Paths management
 while [ $# -gt 1 ]; do
+    echo $1 >> "/home/jose/debug.txt"
     shift
 done
 
