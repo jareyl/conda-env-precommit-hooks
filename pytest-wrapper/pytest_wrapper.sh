@@ -25,16 +25,21 @@ function check_pytest_status() {
 # End functions definition
 # -----------------------------------------------------------------------
 
-MY_PATH=$(dirname "$0")            # relative
-MY_PATH=$(dirname $(dirname $(cd "$MY_PATH" && pwd)))    # going up 2 dir levels
-if [[ -z "$MY_PATH" ]] ; then
-  # error; for some reason, the path is not accessible
-  # to the script (e.g. permissions re-evaled after suid)
-  exit 1  # fail
-fi
+#MY_PATH=$(dirname "$0")            # relative
+#MY_PATH=$(dirname $(dirname $(cd "$MY_PATH" && pwd)))    # going up 2 dir levels
+#if [[ -z "$MY_PATH" ]] ; then
+#  # error; for some reason, the path is not accessible
+#  # to the script (e.g. permissions re-evaled after suid)
+#  exit 1  # fail
+#fi
 
 #Paths management
-ROOT_PATH=$MY_PATH
+while [ $# -gt 1 ]; do
+    shift
+done
+
+ROOT_PATH="/$(echo "$1" | cut -d "/" -f2)"
+echo $ROOT_PATH
 SETUP_PATH=$ROOT_PATH/setup
 SETUP_CONF_PATH=$SETUP_PATH/style_conf
 SRC_PATH=$ROOT_PATH/src
