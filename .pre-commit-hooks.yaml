@@ -33,7 +33,7 @@
     stages: [commit]
     language: conda
     additional_dependencies: ['mypy']
-    entry: tools/types/mypy_wrapper.sh
+    entry: mypy-wrapper/mypy_wrapper.sh
     types: [python]
     require_serial: true
     always_run: true
@@ -43,7 +43,7 @@
     stages: [commit]
     language: conda
     additional_dependencies: ['pytest']
-    entry: tools/test/pytest_wrapper.sh
+    entry: pytest-wrapper/pytest_wrapper.sh
     types: [python]
     pass_filenames: false
     always_run: true
