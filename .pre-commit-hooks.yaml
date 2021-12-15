@@ -34,17 +34,15 @@
     require_serial: true
     always_run: true
 
--   id: pytest
+  - id: pytest
     name: pytest
-    stages: [commit]
-    language: script
-    entry: pytest-wrapper/pytest_wrapper.sh
-    types: [python]
+    entry: pytest
+    language: system
     pass_filenames: false
     always_run: true
 
 -   id: pytest-cov
-    name: pytest
+    name: pytest-cov
     stages: [push]
     language: conda
     additional_dependencies: ['pytest']
