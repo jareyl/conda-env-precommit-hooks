@@ -2,7 +2,7 @@
     name: pre-commit-autoupdater
     entry: pre-commit autoupdate
     language: conda
-    description: Updates the version of the repositorties to the latest tag available for them
+    description: Updates the version of the repositories to the latest tag available for them in the pre-commit-config.yaml of the project.
     always_run: true
     pass_filenames: false
     stages: [commit]
