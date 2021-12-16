@@ -10,3 +10,4 @@ dependencies:
   - pip:
     - types-setuptools
     - mypy
+    - pre-commit
