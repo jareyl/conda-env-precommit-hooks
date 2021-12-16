@@ -1,10 +1,11 @@
 -   id: pre-commit-autoupdater
     name: pre-commit-autoupdater
     entry: pre-commit autoupdate
-    language: script
+    language: conda
     description: Updates the version of the repositorties to the latest tag available for them
     always_run: true
     stages: [commit]
+    verbose: true
 
 -   id: isort
     name: isort
