@@ -4,6 +4,7 @@
     language: conda
     description: Updates the version of the repositorties to the latest tag available for them
     always_run: true
+    pass_filenames: false
     stages: [commit]
     verbose: true
 
